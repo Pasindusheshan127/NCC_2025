@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: ./frontend
+    image: pasindusheshan/simple-frontend:latest
+    container_name: simple-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend
+    image: pasindusheshan/spring-backend:latest
+    container_name: spring-backend
+    ports:
+      - "5000:8080"
